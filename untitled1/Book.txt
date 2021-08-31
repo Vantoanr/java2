@@ -1,0 +1,4 @@
+Book{code='B1', title='Doraemon', author='Người không ngủ', price=20.0}
+Book{code='B2', title='Cừu vui vẻ và sói xám', author='Lung Thị Linh', price=30.0}
+Book{code='B3', title='Trạn vương', author='Hội những người thích lấy vợ giàu', price=50.0}
+Book{code='B4', title='Người không ngủ', author='Nguyễn Văn Toản', price=10000.0}

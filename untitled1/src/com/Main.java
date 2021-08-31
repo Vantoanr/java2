@@ -57,11 +57,12 @@ public class Main {
                     list.add(book);
                 }
                 loop++;
+                System.out.println("-------");
             }
         }
 
 
-        System.out.println("Thông tin trong tệp Book.txt");
+        System.out.println("\n"+"Thông tin trong tệp Book.txt");
         // Ghi 1 list book vào file
         FileWriter writer = new FileWriter(bookFile.getAbsolutePath(), true);
         for (Book i : list) {
@@ -111,6 +112,7 @@ public class Main {
                 name = input.nextLine();
                 students.put(phoneNumber, name);
                 i++;
+                System.out.println("----");
             }
         }
 
