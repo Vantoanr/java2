@@ -1,5 +1,8 @@
 package com;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +16,7 @@ public class Main {
         System.out.println("Giải câu 1.");
         File bookFile = new File("Book.txt");
         if (bookFile.exists()) {
-            bookFile.delete();
+            bookFile.getAbsoluteFile().delete();
         } else {
             bookFile.createNewFile();
         }
@@ -71,13 +74,17 @@ public class Main {
         writer.close();
 
         // Đọc file
-        InputStream inputStream = new FileInputStream(bookFile);
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        int c;
-        while ((c = inputStreamReader.read()) != -1) {
-            System.out.print((char) c);
-        }
-        inputStream.close();
+//        InputStream inputStream = new FileInputStream(bookFile);
+//        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+//        int c;
+//        while ((c = inputStreamReader.read()) != -1) {
+//            System.out.print((char) c);
+//        }
+//        inputStream.close();
+
+        Path path = Paths.get(bookFile.getAbsolutePath());
+        List<String> reader = Files.readAllLines(path);
+        System.out.println(reader);
         // Kết thúc câu 1
         System.out.println("\n");
 
@@ -125,6 +132,10 @@ public class Main {
             for (String z : students.keySet()) {
                 System.out.println("Số điện thoại: " + z + " | Tên: " + students.get(z));
             }
+        }
+
+        if(students.containsKey("000")){
+            System.out.println("Có chứa dữ liệu sdt 000 : "+students.get("000"));
         }
         // Kết thúc câu 2
 
